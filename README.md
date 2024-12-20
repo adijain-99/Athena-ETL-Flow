@@ -1,6 +1,6 @@
 # Athena-ETL-Flow
 
-## csv-glue crawler-s3 source bucket-amazon glue-s3 target bucket-athena query
+## csv-glue crawler-s3 source bucket-amazon glue-s3 target bucket-athena query-s3 results bucket
 
 
 - AWS offers serverless services which we are gonna use
@@ -22,4 +22,9 @@
 - Select the appropriate IAM role
 - Create target Database - necessary.
 - Don't add any  tables in the DB.
-- 
+- RUN this crawler and all the information will be stored in the target database you created.
+- Now create an ETL job - create visual ETL job - select S3 as source - select the database trhat you just created - select S3 target bucket as a target(json format) - then select any actions, I chose 'Select Fields'
+- now in this - select node parents for the action(source bucket) and the target bucket(actions)
+- in that 'Select Fields' chose any parameter - In job details select the IAM role as well
+- then save the job - run the job.
+- Check the target bucket now. 
